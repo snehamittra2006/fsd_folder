@@ -6,21 +6,34 @@
     <title>Document</title>
 </head>
 <body>
-    <div class=".text-box">
+    <div class="text-box">
     <header>
         <h1><u><center>ONLINE SHOP</center></u></h1>
+    </header>
         <main>
             <ul>
                 <li>
-                    RICE : 500
+                    Rice : 500
                 </li>
                 <li>
-
+                    Tea : 50
+                </li>
+                <li>
+                    Coffee : 60
+                </li>
+                <li>
+                    Sugar : 10
+                </li>
+                <li>
+                    Bread : 100
                 </li>
             </ul>
         </main>
-    </header>
+        <center><button onclick="enter_details()">BUY NOW</button></center>
+        <br>
+        <center><button onclick="display_price(prod,n)">GO TO CART</button></center>
     </div>
+    <div id="boxToHide" class="my-box"></div>
 </body>
 </html>
 <style>
@@ -32,8 +45,56 @@
     .text-box {
       border: 2px solid black;
       padding: 20px;
-      background-color: #ffffff; /* White box stands out against gray body background */
+      background-color: #ffffff; 
       border-radius: 6px;
       max-width: 600px;
     }
+    button{
+        background-color: pink;
+    }
+    .my-box{
+        background-color: pink;
+        border :2px solid black;
+        padding: 20px;
+        border-radius: 6px;
+        max-width: 600px;
+        display: none;
+    }
 </style>
+<script>
+    const menu = {
+        Rice:500,
+        Tea:50,
+        Coffee:60,
+        Sugar:10,
+        Bread:100
+    }
+
+    function enter_details(){
+        globalThis.prod = prompt("Enter your product name : ");
+        globalThis.n = prompt("Enter your quantity : ");
+    }
+
+    function display_price(prod,n){
+        let total =  menu[prod]*n;
+        let box = document.getElementById("boxToHide");
+        box.innerHTML= `<h2>Your total amount for ${prod}(${n}) is ${total} Rupees.</h2>`
+        if (prod=="Rice"){
+            box.innerHTML+=`<img src="Rice.jpg" style = "height:80px; width:80px; border-radius:50%;">`
+        }
+        else if (prod=="Tea"){
+            box.innerHTML+=`<img src="tea.jpg" style = "height:80px; width:80px; border-radius:50%;">`
+        }
+        else if (prod=="Bread"){
+            box.innerHTML+=`<img src="bread.jpg" style = "height:80px; width:80px; border-radius:50%;">`
+        }
+        else if (prod=="Coffee"){
+            box.innerHTML+=`<img src="coffee.jpg" style = "height:80px; width:80px; border-radius:50%;">`
+        }
+        else if (prod=="Sugar"){
+            box.innerHTML+=`<img src="sugar.jpg" style = "height:80px; width:80px; border-radius:50%;">`
+        }
+        box.innerHTML+=`<center><h1>Thank You for visiting!</h1><center>`
+        box.style.display = "block";
+    }
+</script>

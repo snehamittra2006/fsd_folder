@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Box Example</title>
+    <style>
+        /* The box style */
+        .my-box {
+            width: 200px;
+            height: 200px;
+            background-color: #3498db;
+            margin-top: 20px;
+            
+            /* Hides the box by default */
+            display: none; 
+        }
+    </style>
+</head>
+<body>
+
+    <!-- The Button -->
+    <button onclick="showBox()">Click to Reveal Box</button>
+
+    <!-- The Box (Hidden by default) -->
+    <div id="boxToHide" class="my-box"></div>
+
+    <script>
+        function showBox() {
+            // Find the box element by its ID
+            let box = document.getElementById("boxToHide");
+            
+            // Change its display from 'none' to 'block' to make it visible
+            box.style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
