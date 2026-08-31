@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+   const num = [11,22,32,41,5,62,73,91,9];
+   const even = num.filter((i)=>(i%2==0));
+   const sqr = even.map((i)=>(i*i));
+   const sum = sqr.reduce((i,s)=>(i+s))
+   console.log("num==",num);
+   console.log("even==",even);
+   console.log("sqr==",sqr);
+   console.log("sum==",sum);
+
+</script>
